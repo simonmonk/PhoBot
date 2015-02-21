@@ -21,6 +21,7 @@ void PhotonBot::init(float batteryVoltage, float motorVoltage) {
         pinMode(M4[i], OUTPUT);
     }
     setStandby(false);
+    SoftPWMBegin();
 }
 
 int PhotonBot::control(String command) {
