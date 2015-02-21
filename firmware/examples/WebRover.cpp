@@ -1,5 +1,17 @@
+/* 
+
+This is an example program for the Photon_Bot library for the
+Robot controller of the same name, by MonkMakes.com
+
+You will need to include the following public libraries:
+
+HC_SR04
+SoftPWM
+SparkIntervalTimer
+
+*/
+
 #include "Photon_Bot/Photon_Bot.h"
-#include "HC_SR04/HC_SR04.h"
 
 
 double volts = 0.0;
