@@ -2,8 +2,6 @@
 #define _Photon_Bot
  
 #include "application.h"
-#include "HC_SR04/HC_SR04.h"
-#include "SoftPWM/SoftPWM.h"
  
 class PhotonBot
 {
