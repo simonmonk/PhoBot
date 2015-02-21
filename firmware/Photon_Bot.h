@@ -2,8 +2,8 @@
 #define _Photon_Bot
  
 #include "application.h"
-#include "SparkIntervalTimer/SparkIntervalTimer.h"
-#include "SoftPWM/SoftPWM.h"
+#include "../SparkIntervalTimer/SparkIntervalTimer.h"
+#include "../SoftPWM/SoftPWM.h"
  
 class PhotonBot
 {
