@@ -1,4 +1,6 @@
 #include "Photon_Bot.h"
+#include "../SparkIntervalTimer/SparkIntervalTimer.h"
+#include "../SoftPWM/SoftPWM.h"
  
 PhotonBot::PhotonBot(){
     init();
