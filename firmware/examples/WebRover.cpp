@@ -1,4 +1,6 @@
 #include "Photon_Bot/Photon_Bot.h"
+#include "HC_SR04/HC_SR04.h"
+
 
 double volts = 0.0;
 double distance = 0.0;
@@ -16,7 +18,6 @@ int setMotors(String command) {
 }
 
 void setup() {
-    SoftPWMBegin();
     Spark.function("control", control);
     Spark.function("setmotors", setMotors);
     Spark.variable("volts", &volts, DOUBLE);
