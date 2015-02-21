@@ -1,45 +1,27 @@
-#include "HC_SR04/HC_SR04.h"
+double volts = 0.0;
+double distance = 0.0;
 
-double cm = 0.0;
-double inches = 0.0;
 
-int trigPin = D4;
-int echoPin = D5;
+PhotonBot p = PhotonBot();
+HC_SR04 rangefinder = HC_SR04(p.trigPin, p.echoPin);
 
-/*
-Connect an HC-SR04 Range finder as follows:
-Spark   HC-SR04
-GND     GND
-5V      VCC
-D4      Trig
-D5      Voltage divider output - see below
-
-Echo --|
-       >
-       < 470 ohm resistor
-       >
-       ------ D5 on Spark
-       >
-       < 470 ohm resistor
-       >
-GND ---|
-
-Test it using curl like this:
-curl https://api.spark.io/v1/devices/<deviceid>/cm?access_token=<accesstoken>
-*/
-
-HC_SR04 rangefinder = HC_SR04(trigPin, echoPin);
-
-void setup() 
-{
-    Spark.variable("cm", &cm, DOUBLE);
-    Spark.variable("inches", &inches, DOUBLE);
+int control(String command) {
+    return p.control(command);
 }
 
-void loop() 
-{
-    cm = rangefinder.getDistanceCM();
-    inches = rangefinder.getDistanceInch();
-    delay(100);
+int setMotors(String command) {
+    return p.setMotors(command);
 }
 
+void setup() {
+    SoftPWMBegin();
+    Spark.function("control", control);
+    Spark.function("setmotors", setMotors);
+    Spark.variable("volts", &volts, DOUBLE);
+    Spark.variable("distance", &distance, DOUBLE);
+}
+
+void loop() {
+    volts = p.batteryVolts();
+    distance = rangefinder.getDistanceCM();
+}
