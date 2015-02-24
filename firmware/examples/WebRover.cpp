@@ -23,7 +23,6 @@ HC_SR04 rangefinder = HC_SR04(p.trigPin, p.echoPin);
 
 void setup() {
     Spark.function("control", control);
-    Spark.function("setmotors", setMotors);
     Spark.variable("volts", &volts, DOUBLE);
     Spark.variable("distance", &distance, DOUBLE);
 }
@@ -35,8 +34,4 @@ void loop() {
 
 int control(String command) {
     return p.control(command);
-}
-
-int setMotors(String command) {
-    return p.setMotors(command);
 }
