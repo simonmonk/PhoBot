@@ -11,14 +11,14 @@ SparkIntervalTimer
 
 */
 
-#include "Photon_Bot/Photon_Bot.h"
+#include "PhoBot/PhoBot.h"
 
 
 double volts = 0.0;
 double distance = 0.0;
 
 
-PhotonBot p = PhotonBot();
+PhoBot p = PhoBot();
 HC_SR04 rangefinder = HC_SR04(p.trigPin, p.echoPin);
 
 void setup() {
