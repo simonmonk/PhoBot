@@ -1,4 +1,4 @@
-#include "PhotoBot.h"
+#include "PhoBot.h"
 #include "../SparkIntervalTimer/SparkIntervalTimer.h"
 #include "../SoftPWM/SoftPWM.h"
  
