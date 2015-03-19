@@ -1,16 +1,16 @@
-#include "Photon_Bot.h"
+#include "PhotoBot.h"
 #include "../SparkIntervalTimer/SparkIntervalTimer.h"
 #include "../SoftPWM/SoftPWM.h"
  
-PhotonBot::PhotonBot(){
+PhoBot::PhoBot(){
     init();
 }
 
-void PhotonBot::init() {
+void PhoBot::init() {
     init(6.0, 6.0);
 }
 
-void PhotonBot::init(float batteryVoltage, float motorVoltage) {
+void PhoBot::init(float batteryVoltage, float motorVoltage) {
     pwmFactor = motorVoltage / batteryVoltage;
     if (pwmFactor > 1.0) {
         pwmFactor = 1.0;
@@ -26,7 +26,7 @@ void PhotonBot::init(float batteryVoltage, float motorVoltage) {
     SoftPWMBegin();
 }
 
-int PhotonBot::control(String command) {
+int PhoBot::control(String command) {
     // "F-100" - forward B, L, R
     String action = command.substring(0, 1);
     String speedStr = command.substring(2);
@@ -58,7 +58,7 @@ int PhotonBot::control(String command) {
 }
 
 
-int PhotonBot::setMotors(String command) {
+int PhoBot::setMotors(String command) {
     // "M3-F-100" use fixed positioning for first 2 params
     String motorName = command.substring(0, 2);
     String directionStr = command.substring(3, 4);
@@ -83,11 +83,11 @@ int PhotonBot::setMotors(String command) {
     return 1;
 }
 
-void PhotonBot::setMotor(int motor[], int direction) {
+void PhoBot::setMotor(int motor[], int direction) {
     setMotor(motor, direction, 1.0);
 }
 
-void PhotonBot::setMotor(int motor[], int direction, float duty) {
+void PhoBot::setMotor(int motor[], int direction, float duty) {
     int pwm = int((duty * pwmFactor) * 256.0);
     if (pwm > 255) {
         pwm = 255;
@@ -109,13 +109,13 @@ void PhotonBot::setMotor(int motor[], int direction, float duty) {
     }
 }
 
-float PhotonBot::batteryVolts() {
+float PhoBot::batteryVolts() {
     int raw = analogRead(battery);
     float vout = raw * 3.3 / 4096.0;
     float k = 11.0; // ratio of R1 to R1+R2
     return vout * k + 0.33; // 0.3V forward voltage of D1
 }
 
-void PhotonBot::setStandby(boolean state) {
+void PhoBot::setStandby(boolean state) {
     digitalWrite(standby, !state);
 }
