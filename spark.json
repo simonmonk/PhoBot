@@ -1,7 +1,7 @@
 {
-  "name": "Photon_Bot",
+  "name": "PhoBot",
   "author": "Simon Monk <simon@monkmakes.com>",
   "license": "MIT",
   "version": "0.0.10",
-  "description": "A library for the MonkMakes Photon Bot robot controller shield"
+  "description": "A library for the MonkMakes PhoBot robot controller shield"
 }
