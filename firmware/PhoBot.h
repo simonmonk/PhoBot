@@ -1,12 +1,12 @@
-#ifndef _Photon_Bot
-#define _Photon_Bot
+#ifndef _PhoBot
+#define _PhoBot
  
 #include "application.h"
  
-class PhotonBot
+class PhoBot
 {
 public: 
-  PhotonBot();
+  PhoBot();
   int setMotors(String command);
   void setMotor(int motor[], int direction);
   void setMotor(int motor[], int direction, float duty);
