@@ -7,7 +7,7 @@ class PhoBot
 {
 public: 
   PhoBot();
-  PhoBot::PhoBot(float batteryVoltage, float motorVoltage);
+  PhoBot(float batteryVoltage, float motorVoltage);
   int setMotors(String command);
   void setMotor(int motor[], int direction);
   void setMotor(int motor[], int direction, float duty);
