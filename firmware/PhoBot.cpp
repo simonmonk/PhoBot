@@ -6,8 +6,12 @@ PhoBot::PhoBot(){
     init();
 }
 
+PhoBot::PhoBot(float batteryVoltage, float motorVoltage){
+    init(batteryVoltage, motorVoltage);
+}
+
 void PhoBot::init() {
-    init(6.0, 6.0);
+    init(9.0, 6.0);
 }
 
 void PhoBot::init(float batteryVoltage, float motorVoltage) {
