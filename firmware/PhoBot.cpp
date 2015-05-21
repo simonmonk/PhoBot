@@ -94,7 +94,7 @@ void PhoBot::setMotor(int motor[], int direction, float duty) {
     if (pwm > 255) {
         pwm = 255;
     }
-	if (motor = M1 || motor == M2) {
+	if (motor == M1 || motor == M2) {
 		digitalWrite(motor[0], pwm);
 	}
     else if (motor == M3 || motor == M4) {

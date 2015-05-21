@@ -16,6 +16,8 @@ https://api.spark.io/v1/devices/3b001b000447343232363230/distance?access_token=1
 
 */
 
+#include "PhoBot/PhoBot.h"
+
 double volts = 0.0;
 double distance = 0.0;
 
