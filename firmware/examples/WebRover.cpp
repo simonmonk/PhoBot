@@ -3,11 +3,7 @@
 This is an example program for the Photon_Bot library for the
 Robot controller of the same name, by MonkMakes.com
 
-You will need to include the following public libraries:
-
-HC_SR04
-SoftPWM
-SparkIntervalTimer
+You will need to include the HC_SR04 library
 
 */
 

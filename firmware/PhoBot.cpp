@@ -26,7 +26,6 @@ void PhoBot::init(float batteryVoltage, float motorVoltage) {
         pinMode(M4[i], OUTPUT);
     }
     setStandby(false);
-    //SoftPWMBegin();
 }
 
 int PhoBot::control(String command) {
@@ -95,7 +94,6 @@ void PhoBot::setMotor(int motor[], int direction, float duty) {
     if (pwm > 255) {
         pwm = 255;
     }
-    //SoftPWMSet(motor[0], pwm);
 	analogWrite(motor[0], pwm);
     if (motor == M3 || motor == M4) {
         if (direction == STOP) {
