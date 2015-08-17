@@ -14,13 +14,16 @@ double volts = 0.0;
 double distance = 0.0;
 
 
-PhoBot p = PhoBot();
+PhoBot p = PhoBot(6.0, 3.0); //assuming you are using ABRA kit.
 HC_SR04 rangefinder = HC_SR04(p.trigPin, p.echoPin);
 
 void setup() {
     Spark.function("control", control);
     Spark.variable("volts", &volts, DOUBLE);
     Spark.variable("distance", &distance, DOUBLE);
+    pinMode(A3, OUTPUT);
+    pinMode(A4, OUTPUT);
+    pinMode(A5, OUTPUT);
 }
 
 void loop() {
@@ -29,5 +32,16 @@ void loop() {
 }
 
 int control(String command) {
+    if(command == "M3-S" || command == "M4-S")
+    {
+        p.setMotors(command);
+        digitalWrite(A3, LOW);
+    }
+    else
+    {
+        p.setMotors(command);
+        digitalWrite(A3, HIGH);
+    }
+    p.setMotors(command);
     return p.control(command);
 }
