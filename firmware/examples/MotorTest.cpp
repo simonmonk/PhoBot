@@ -1,4 +1,3 @@
-
 #include "PhoBot/PhoBot.h"
 
 PhoBot p = PhoBot(9.0, 6.0);
@@ -24,14 +23,17 @@ void loop() {
     pause();
     p.setMotors("M3-F-100");
     p.setMotors("M4-F-100");
+    digitalWrite(A3, HIGH);
     delay(2000);
     pause();
     p.setMotors("M3-B-100");
     p.setMotors("M4-B-100");
+    digitalWrite(A3, HIGH);
     delay(2000);
     pause();
     p.setMotors("M3-F-50");
     p.setMotors("M4-F-50");
+    digitalWrite(A3, HIGH);
     delay(2000);
 }
 
