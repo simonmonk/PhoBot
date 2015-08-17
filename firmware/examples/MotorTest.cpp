@@ -4,6 +4,9 @@
 PhoBot p = PhoBot(9.0, 6.0);
 
 void setup() {
+    pinMode(A3, OUTPUT);
+    pinMode(A4, OUTPUT);
+    pinMode(A5, OUTPUT);
 }
 
 void loop() {
@@ -35,5 +38,6 @@ void loop() {
 void pause() {
     p.setMotors("M3-S");
     p.setMotors("M4-S");
+    digitalWrite(A3, LOW);
     delay(100);
 }
